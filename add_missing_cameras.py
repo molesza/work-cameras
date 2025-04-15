@@ -46,20 +46,29 @@ def parse_csv_file(csv_file):
                 # Create camera name by replacing spaces with hyphens
                 camera_name = overlay_text.strip().replace(' ', '-')
                 
-                # Extract RTSP path from URL
-                rtsp_path_match = re.search(r'rtsp://[^:]+:[^@]+@[^:]+:\d+(/[^?]+\?.*)', rtsp_url)
-                if rtsp_path_match:
-                    rtsp_path = rtsp_path_match.group(1)
-                else:
-                    print(f"Warning: Could not extract RTSP path from URL: {rtsp_url}")
-                    continue
+                # Parse RTSP URL more robustly
+                # Format: rtsp://[username:password@]hostname:port/path
                 
-                # Extract hostname from URL
-                hostname_match = re.search(r'rtsp://[^:]+:[^@]+@([^:]+):', rtsp_url)
-                if hostname_match:
-                    hostname = hostname_match.group(1)
+                # First, find the last @ symbol (in case password contains @)
+                parts = rtsp_url.split('://', 1)[1]
+                last_at_index = parts.rfind('@')
+                
+                if last_at_index != -1:
+                    # URL has credentials
+                    host_port_path = parts[last_at_index + 1:]
                 else:
-                    print(f"Warning: Could not extract hostname from URL: {rtsp_url}")
+                    # URL has no credentials
+                    host_port_path = parts
+                
+                # Now extract hostname and path
+                host_port, path = host_port_path.split('/', 1)
+                hostname, port = host_port.split(':')
+                rtsp_path = '/' + path
+                
+                # Validate the extracted hostname and path
+                if not hostname or not rtsp_path:
+                    print(f"Warning: Could not extract hostname or path from URL: {rtsp_url}")
+                    print(f"Extracted hostname: {hostname}, path: {rtsp_path}")
                     continue
                 
                 # Create camera configuration

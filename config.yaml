@@ -1,22 +1,337 @@
 onvif:
-  - name: IPCamera
-    dev: enp6s0
+  - dev: enp6s0
+    highQuality:
+      bitrate: 2048
+      framerate: 100
+      height: 1080
+      quality: 4
+      rtsp: /cam/realmonitor?channel=1&subtype=0
+      snapshot: /onvif-http/snapshot
+      width: 960
+    mac: 1A:11:B0:97:9D:71
+    name: IPCamera
+    ports:
+      rtsp: 8554
+      server: 8081
+      snapshot: 8080
     target:
       hostname: 192.168.6.219
       ports:
         rtsp: 554
         snapshot: 80
+    uuid: faacbafa-1c84-4593-83f5-d024c0a93955
+  - dev: enp6s0
     highQuality:
-      rtsp: /cam/realmonitor?channel=1&subtype=0
+      bitrate: 2048
+      framerate: 100
+      height: 576
+      quality: 4
+      rtsp: /cam/realmonitor?channel=2&subtype=0
       snapshot: /onvif-http/snapshot
       width: 960
-      height: 1080
-      framerate: 100
-      bitrate: 2048
-      quality: 4
+    mac: 1A:11:B0:51:9F:93
+    name: BakeryCam
     ports:
-      server: 8081
-      rtsp: 8554
-      snapshot: 8080
-    uuid: faacbafa-1c84-4593-83f5-d024c0a93955
-    mac: 1A:11:B0:97:9D:71
+      rtsp: 9554
+      server: 9081
+      snapshot: 9080
+    target:
+      hostname: 192.168.6.219
+      ports:
+        rtsp: 554
+        snapshot: 80
+    uuid: c4111088-b8a0-41b2-a4a7-40d6cba3bbca
+  - dev: enp6s0
+    highQuality:
+      bitrate: 2048
+      framerate: 100
+      height: 1080
+      quality: 4
+      rtsp: /cam/realmonitor?channel=3&subtype=0
+      snapshot: /onvif-http/snapshot
+      width: 960
+    name: DAIRY-FRESH
+    ports:
+      rtsp: 10554
+      server: 10081
+      snapshot: 10080
+    target:
+      hostname: 192.168.6.219
+      ports:
+        rtsp: 554
+        snapshot: 80
+    uuid: 570d18b9-dfbd-442a-82a8-7249fc549826
+    mac: 1A:11:B0:73:D1:51
+  - dev: enp6s0
+    highQuality:
+      bitrate: 2048
+      framerate: 100
+      height: 1080
+      quality: 4
+      rtsp: /cam/realmonitor?channel=4&subtype=0
+      snapshot: /onvif-http/snapshot
+      width: 960
+    name: DELI-CHILLER
+    ports:
+      rtsp: 11554
+      server: 11081
+      snapshot: 11080
+    target:
+      hostname: 192.168.6.219
+      ports:
+        rtsp: 554
+        snapshot: 80
+    uuid: c2807a1a-ace6-4bc1-886c-63727d00858d
+    mac: 1A:11:B0:9B:5F:B3
+  - dev: enp6s0
+    highQuality:
+      bitrate: 2048
+      framerate: 100
+      height: 1080
+      quality: 4
+      rtsp: /cam/realmonitor?channel=5&subtype=0
+      snapshot: /onvif-http/snapshot
+      width: 960
+    name: BAKERY-STOCKROOM
+    ports:
+      rtsp: 12554
+      server: 12081
+      snapshot: 12080
+    target:
+      hostname: 192.168.6.219
+      ports:
+        rtsp: 554
+        snapshot: 80
+    uuid: 157f70c6-755d-496c-9972-0d64a4c501e0
+    mac: 1A:11:B0:99:3D:73
+  - dev: enp6s0
+    highQuality:
+      bitrate: 2048
+      framerate: 100
+      height: 1080
+      quality: 4
+      rtsp: /cam/realmonitor?channel=6&subtype=0
+      snapshot: /onvif-http/snapshot
+      width: 960
+    name: BAKERY-FREEZER
+    ports:
+      rtsp: 13554
+      server: 13081
+      snapshot: 13080
+    target:
+      hostname: 192.168.6.219
+      ports:
+        rtsp: 554
+        snapshot: 80
+    uuid: bd94efe3-aee8-4415-8680-e8ab1004ee9c
+    mac: 1A:11:B0:95:DF:35
+  - dev: enp6s0
+    highQuality:
+      bitrate: 2048
+      framerate: 100
+      height: 1080
+      quality: 4
+      rtsp: /cam/realmonitor?channel=7&subtype=0
+      snapshot: /onvif-http/snapshot
+      width: 960
+    name: BAKERY-COLD-ROOM
+    ports:
+      rtsp: 14554
+      server: 14081
+      snapshot: 14080
+    target:
+      hostname: 192.168.6.219
+      ports:
+        rtsp: 554
+        snapshot: 80
+    uuid: 2fdbeff7-9297-491a-b8d6-d4932e8185ea
+    mac: 1A:11:B0:9F:95:31
+  - dev: enp6s0
+    highQuality:
+      bitrate: 2048
+      framerate: 100
+      height: 1080
+      quality: 4
+      rtsp: /cam/realmonitor?channel=8&subtype=0
+      snapshot: /onvif-http/snapshot
+      width: 960
+    name: DAIRY-FRUIT-VEG
+    ports:
+      rtsp: 15554
+      server: 15081
+      snapshot: 15080
+    target:
+      hostname: 192.168.6.219
+      ports:
+        rtsp: 554
+        snapshot: 80
+    uuid: a3e95999-6be1-425a-96ee-e1766f080d6b
+    mac: 1A:11:B0:51:B5:51
+  - dev: enp6s0
+    highQuality:
+      bitrate: 2048
+      framerate: 100
+      height: 1080
+      quality: 4
+      rtsp: /cam/realmonitor?channel=9&subtype=0
+      snapshot: /onvif-http/snapshot
+      width: 960
+    name: AISLE-5-COLD
+    ports:
+      rtsp: 16554
+      server: 16081
+      snapshot: 16080
+    target:
+      hostname: 192.168.6.219
+      ports:
+        rtsp: 554
+        snapshot: 80
+    uuid: 7136952f-fb4c-498b-ab22-71a94f1c3734
+    mac: 1A:11:B0:FB:73:DB
+  - dev: enp6s0
+    highQuality:
+      bitrate: 2048
+      framerate: 100
+      height: 1080
+      quality: 4
+      rtsp: /cam/realmonitor?channel=10&subtype=0
+      snapshot: /onvif-http/snapshot
+      width: 960
+    name: Deli-Freezer
+    ports:
+      rtsp: 17554
+      server: 17081
+      snapshot: 17080
+    target:
+      hostname: 192.168.6.219
+      ports:
+        rtsp: 554
+        snapshot: 80
+    uuid: 4b2cf4d7-0e51-478a-ba93-a78e0b73f5db
+    mac: 1A:11:B0:9D:5B:7B
+  - dev: enp6s0
+    highQuality:
+      bitrate: 2048
+      framerate: 100
+      height: 1080
+      quality: 4
+      rtsp: /cam/realmonitor?channel=11&subtype=0
+      snapshot: /onvif-http/snapshot
+      width: 960
+    name: Sushi-&-Fish
+    ports:
+      rtsp: 18554
+      server: 18081
+      snapshot: 18080
+    target:
+      hostname: 192.168.6.219
+      ports:
+        rtsp: 554
+        snapshot: 80
+    uuid: 7141c6bf-23f4-4376-bbdc-1f5020a58dda
+    mac: 1A:11:B0:D7:B5:59
+  - dev: enp6s0
+    highQuality:
+      bitrate: 2048
+      framerate: 100
+      height: 1080
+      quality: 4
+      rtsp: /cam/realmonitor?channel=12&subtype=0
+      snapshot: /onvif-http/snapshot
+      width: 960
+    name: ButterflyStore.com
+    ports:
+      rtsp: 19554
+      server: 19081
+      snapshot: 19080
+    target:
+      hostname: 192.168.6.219
+      ports:
+        rtsp: 554
+        snapshot: 80
+    uuid: 59a8d8e7-545d-41f2-96d3-0bc42c74ff96
+    mac: 1A:11:B0:17:15:D9
+  - dev: enp6s0
+    highQuality:
+      bitrate: 2048
+      framerate: 100
+      height: 1080
+      quality: 4
+      rtsp: /cam/realmonitor?channel=13&subtype=0
+      snapshot: /onvif-http/snapshot
+      width: 960
+    name: Channel-1
+    ports:
+      rtsp: 20554
+      server: 20081
+      snapshot: 20080
+    target:
+      hostname: 192.168.6.219
+      ports:
+        rtsp: 554
+        snapshot: 80
+    uuid: 4d2cda2a-73b1-493d-8072-cad2ffd5f892
+    mac: 1A:11:B0:3D:FB:57
+  - dev: enp6s0
+    highQuality:
+      bitrate: 2048
+      framerate: 100
+      height: 1080
+      quality: 4
+      rtsp: /cam/realmonitor?channel=14&subtype=0
+      snapshot: /onvif-http/snapshot
+      width: 960
+    name: Bakery-Oxenhill-Track
+    ports:
+      rtsp: 21554
+      server: 21081
+      snapshot: 21080
+    target:
+      hostname: 192.168.6.219
+      ports:
+        rtsp: 554
+        snapshot: 80
+    uuid: 91fa41cc-9303-4d31-8ceb-3ab49529d695
+    mac: 1A:11:B0:75:37:91
+  - dev: enp6s0
+    highQuality:
+      bitrate: 2048
+      framerate: 100
+      height: 1080
+      quality: 4
+      rtsp: /cam/realmonitor?channel=15&subtype=0
+      snapshot: /onvif-http/snapshot
+      width: 960
+    name: SPARE
+    ports:
+      rtsp: 22554
+      server: 22081
+      snapshot: 22080
+    target:
+      hostname: 192.168.6.219
+      ports:
+        rtsp: 554
+        snapshot: 80
+    uuid: 054dd0e8-900a-486b-ad90-0e02cd6a430f
+    mac: 1A:11:B0:15:9F:7F
+  - dev: enp6s0
+    highQuality:
+      bitrate: 2048
+      framerate: 100
+      height: 1080
+      quality: 4
+      rtsp: /cam/realmonitor?channel=16&subtype=0
+      snapshot: /onvif-http/snapshot
+      width: 960
+    name: SPARE
+    ports:
+      rtsp: 23554
+      server: 23081
+      snapshot: 23080
+    target:
+      hostname: 192.168.6.219
+      ports:
+        rtsp: 554
+        snapshot: 80
+    uuid: 9306132a-001f-4bf4-8f5b-5bbfcd109252
+    mac: 1A:11:B0:F9:D3:D3
